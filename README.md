@@ -238,7 +238,7 @@ PORT=5001
 NODE_ENV=development
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/wapio
 JWT_SECRET=your_super_secret_key_here
-JWT_EXPIRE=7d
+JWT_EXPIRE=7d   
 FRONTEND_URL=http://localhost:5173
 ```
 
