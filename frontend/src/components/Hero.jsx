@@ -75,7 +75,7 @@ const Hero = () => {
                         <span className="hidden sm:inline text-gray-300">|</span>
                         <div className="flex items-center gap-2">
                             <FileSpreadsheet className="w-4 h-4 sm:w-5 sm:h-5" />
-                            <span>Upload contacts easily</span>
+                            <span>Upload contacts easilyy</span>
                         </div>
                         <span className="hidden sm:inline text-gray-300">|</span>
                         <div className="flex items-center gap-2">
