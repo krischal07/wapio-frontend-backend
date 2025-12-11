@@ -18,7 +18,7 @@ const Footer = () => {
     setStatus('submitting');
 
     try {
-      const apiUrl = import.meta.env.BACKEND_API_URL || 'http://localhost:5001/api';
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
       console.log('Submitting to:', `${apiUrl}/contact`);
       
       const response = await axios.post(`${apiUrl}/contact`, formData, {
