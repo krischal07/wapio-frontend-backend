@@ -7,8 +7,7 @@ import mongoSanitize from 'express-mongo-sanitize';
 import connectDB from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
 import contactRoutes from './routes/contact.routes.js';
-import whatsappRoutes from './routes/whatsapp.routes.js';
-
+import whatsappRoutes from "./routes/whatsapp.routes.js"
 import { errorHandler } from './middleware/error.middleware.js';
 
 // Load environment variables
@@ -54,8 +53,6 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/webhook', whatsappRoutes);
-
-
 // 404 Handler
 app.use('*', (req, res) => {
   res.status(404).json({
