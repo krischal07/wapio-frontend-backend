@@ -7,6 +7,8 @@ import mongoSanitize from 'express-mongo-sanitize';
 import connectDB from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
 import contactRoutes from './routes/contact.routes.js';
+import whatsappRoutes from './routes/whatsapp.routes.js';
+
 import { errorHandler } from './middleware/error.middleware.js';
 
 // Load environment variables
