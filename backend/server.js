@@ -51,6 +51,8 @@ app.get('/api/health', (req, res) => {
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/webhook', whatsappRoutes);
+
 
 // 404 Handler
 app.use('*', (req, res) => {
