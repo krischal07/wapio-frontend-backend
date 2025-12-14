@@ -9,22 +9,21 @@ const router = express.Router();
  * When you set up a webhook in Meta Developer Console, Meta will send a GET request
  * to verify that you own this endpoint.
  */
-router.get("/whatsapp", (req, res) => {
-  const VERIFY_TOKEN =
-    process.env.WHATSAPP_VERIFY_TOKEN || "samparka_whatsapp_12345";
-
-  const mode = req.query["hub.mode"];
-  const token = req.query["hub.verify_token"];
-  const challenge = req.query["hub.challenge"];
-
-  if (mode === "subscribe" && token === VERIFY_TOKEN) {
-    console.log("✅ Webhook verified successfully");
-    return res.status(200).send(challenge);
-  } else {
-    console.log("❌ Webhook verification failed");
-    return res.sendStatus(403);
+router.get("/webhook", function (req, res) {
+  if (
+    req.query["hub.mode"] != "subscribe" ||
+    req.query["hub.verify_token"] != process.env.VERIFY_TOKEN
+  ) {
+    res.sendStatus(403);
+    return;
   }
+
+  res.send(req.query["hub.challenge"]);
 });
+
+
+
+
 
 /**
  * WhatsApp Webhook Event Handler
